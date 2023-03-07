@@ -26,25 +26,23 @@ public class RestockTheStore {
 		
 	     int leftQtySoda = stockSoda - sodaSold;
 		 
-	     if (sodaSold > stockSoda) {
-	    	 System.out.println("That value is too high. Stock not adjusted\n" ); 
-		 } else {		    	
-		    	 System.out.println("There are " + leftQtySoda + " Sodas Left\n");
+	     if (leftQtySoda <= stockSoda && leftQtySoda > 0) {
+	             System.out.println("There are " + leftQtySoda + " Sodas Left\n");
+		 } else if (sodaSold > stockSoda){		    	
+		    	 System.out.println("That value is too high. Stock not adjusted\n" ); 
 		 }
 	     
-	     
-		// chips
+	  	// chips
 	     System.out.println("How many Chips have been sold today?" + stockChips + " are in stock ");
 	     int chipsSold = scnr.nextInt();
 	     
 	     int leftQtyChips = stockChips - chipsSold;
 	     
-	     if (chipsSold > stockChips) {
-	    	 System.out.println("That value is too high. Stock not adjusted\n" );
-	     } else {
+	     if (leftQtyChips <= stockChips && leftQtyChips > 0) {
 	    	 System.out.println("There are " + leftQtyChips + " Chips Left\n");
-	     }
-	     
+	     } else if (chipsSold > stockChips){
+	    	 System.out.println("That value is too high. Stock not adjusted\n" );
+	     }	     	     
 	     
 	    // Candy
 	     System.out.println("How many Candy have been sold today?" + stockCandy + " are in stock "); 
@@ -52,12 +50,11 @@ public class RestockTheStore {
 	     
 	     int leftQtyCandy = stockCandy - candySold;
 	     
-	     if (candySold > stockCandy) {
-	    	 System.out.println("That value is too high. Stock not adjusted\n\n" );
-	     } else {
-	    	 System.out.println("There are " + leftQtyCandy + " Candy Left\n\n");  
+	     if (candySold <= stockCandy && leftQtyChips > 0) {
+	    	 System.out.println("There are " + leftQtyCandy + " Candy Left\n\n");
+	     } else if (candySold > stockCandy) {
+	    	 System.out.println("That value is too high. Stock not adjusted\n\n" );  
 	     }
-	     
 	     
 	     System.out.println("Thank you for filling out the values." ); 
 	     
@@ -79,8 +76,7 @@ public class RestockTheStore {
 			 System.out.println("Candy needs to be restocked\n");
 		 }
 	
-		 
-    	 System.out.println("Goodbye!");
+		  System.out.println("Goodbye!");
     	 scnr.close();
 	}
 }
